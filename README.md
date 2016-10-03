@@ -41,3 +41,11 @@ and then replace the app.start() by :
 ```javascript
   module.exports = wrapper(app)
 ```
+
+## Tests
+
+Still need to be tested.
+
+## Contribute
+
+Make an issue or a PR :)
