@@ -1,5 +1,8 @@
 # Metalsmith-choo
 
+[![Travis branch](https://img.shields.io/travis/wcastand/metalsmith-choo/master.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/wcastand/metalsmith-choo/master)
+[![npm](https://img.shields.io/npm/v/metalsmith-choo.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/metalsmith-choo)
+
 ## Install
 
 ``` npm install metalsmith-choo ```
