@@ -33,7 +33,7 @@ metalsmith(__dirname)
 In your choo app require the wrapper.
 
 ```javascript
-  const wrapper = require('metalsmith-choo/chooWrap')
+  const wrapper = require('metalsmith-choo/lib/chooWrap')
 ```
 
 and then replace the app.start() by :
