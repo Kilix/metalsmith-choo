@@ -26,12 +26,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wcastand/metalsmith-choo.git"
+    "url": "https://github.com/Kilix/metalsmith-choo.git"
   },
   "bugs": {
-    "url": "https://github.com/wcastand/metalsmith-choo/issues"
+    "url": "https://github.com/Kilix/metalsmith-choo/issues"
   },
-  "homepage": "https://github.com/wcastand/metalsmith-choo#readme",
+  "homepage": "https://github.com/Kilix/metalsmith-choo#readme",
   "author": "William Castandet <wcastand@gmail.com> (https://github.com/wcastand)",
   "license": "MIT",
   "devDependencies": {
