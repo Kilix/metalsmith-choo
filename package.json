@@ -2,6 +2,10 @@
   "name": "metalsmith-choo",
   "description": "Render a choo app in a static website and give choo the hand in front",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "README.md"
+  ],
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "babel --copy-files src/ -d lib/",
