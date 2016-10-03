@@ -42,10 +42,16 @@ and then replace the app.start() by :
   module.exports = wrapper(app)
 ```
 
+## Roadmap
+
+- handle dynamic routing with metalsmith-collection ?
+- get route from choo app (avoid the user to explicitly tell the routes to render)
+
 ## Tests
 
-Still need to be tested.
+``` npm run test ```
 
 ## Contribute
 
 Make an issue or a PR :)
+To commit just use ``` npm run commit ```

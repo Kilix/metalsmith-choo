@@ -10,7 +10,6 @@ test.createStream()
   .pipe(process.stdout)
 
 test('metalsmith-choo', function (t) {
-
   t.test('parseKey', function (tt) {
     tt.plan(2)
 
