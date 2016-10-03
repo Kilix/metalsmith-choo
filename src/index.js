@@ -1,39 +1,21 @@
-const createHTML = require('create-html')
+const { createState, createFile, deleteFiles } = require('./utils')
 const path = require('path')
 
 module.exports = (opts = {}) => {
   const app = require(path.resolve(process.cwd(), opts.entry))
-  return (f, metalsmith, d) => {
+  return (files, metalsmith, done) => {
+    // Get metalsmith's metadata
     const metadata = metalsmith.metadata()
-    const state = { metadata }
 
     // Create state
-    for (let key in f) {
-      state[f[key].namespace] =
-        Object.assign({}, f[key], { contents: f[key].contents.toString() })
-    }
+    const state = createState(metadata, files)
 
     // Delete file to make real files from choo app
-    for (let file in f) {
-      delete f[file]
-    }
+    deleteFiles(files)
 
     // Create files for each routes (static duh!)
-    opts.routes.map(key => {
-      // Replace extension with .html
-      const newFile = key === '/'
-        ? 'index.html'
-        : key.replace('/', '') + '/index.html'
+    opts.routes.map(key => createFile(app, files, state, opts, key))
 
-      // Create file with new extensions, copy and replace contents
-      f[newFile] = {}
-      f[newFile].contents = createHTML({
-        script: opts.bundle,
-        body: `
-          <script>var CHOO_INITIAL_STATE = ${JSON.stringify(state)}</script>
-          <div id="app-root">${app.toString(key, state)}</div>
-        ` })
-    })
-    d()
+    done()
   }
 }

@@ -13,8 +13,8 @@
     "commit": "git-cz",
     "lint": "standard src/**/*.js",
     "lint:fix": "standard --fix src/**/*.js",
-    "test": "npm run lint && mocha -w --compilers js:babel-register",
-    "test:single": "npm run lint && mocha --compilers js:babel-register",
+    "test": "npm run lint && tape test/**/*.js",
+    "test:single": "npm run lint && tape test/**/*.js",
     "prepublish": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -40,16 +40,16 @@
     "babel-preset-stage-0": "^6.16.0",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
-    "chai": "^3.5.0",
     "choo": "^3.3.0",
     "commitizen": "^2.8.6",
     "cz-conventional-changelog": "^1.2.0",
     "metalsmith": "^2.2.0",
     "metalsmith-markdown": "^0.2.1",
-    "mocha": "^3.1.0",
     "rimraf": "^2.5.4",
     "semantic-release": "^4.3.5",
-    "standard": "^8.3.0"
+    "standard": "^8.3.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.2"
   },
   "config": {
     "commitizen": {
