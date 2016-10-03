@@ -42,6 +42,24 @@ and then replace the app.start() by :
   module.exports = wrapper(app)
 ```
 
+## Informations
+
+The metalsmith metadata will be automaticly added to your app state under the key 'metadata'.
+The content of the file from metalsmith will be added to your app state under the key you specified in your frontmatter.
+
+markdown example file:
+
+```
+---
+namespace: home
+// eventually more key, they will be add to your state
+title: Homepage
+---
+
+# Hello content
+
+```
+
 ## Roadmap
 
 - handle dynamic routing with metalsmith-collection ?
