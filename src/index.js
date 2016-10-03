@@ -1,7 +1,8 @@
 const createHTML = require('create-html')
+const path = require('path')
 
 module.exports = (opts = {}) => {
-  const app = require(opts.entry)
+  const app = require(path.resolve(process.cwd(), opts.entry))
   return (f, metalsmith, d) => {
     const metadata = metalsmith.metadata()
     const state = { metadata }
