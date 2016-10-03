@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-choo",
-  "version": "0.0.1",
+  "version": "0.0.0-semantic-release",
   "description": "Render a choo app in a static website and give choo the hand in front",
   "main": "lib/index.js",
   "scripts": {
