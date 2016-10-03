@@ -22,8 +22,7 @@
     "choo",
     "metalsmisth",
     "front",
-    "static",
-    "webapp"
+    "static"
   ],
   "repository": {
     "type": "git",
