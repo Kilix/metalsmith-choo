@@ -6,19 +6,23 @@ const createState = (metadata, f) => {
   const deleteMode = R.omit(['mode'])
   const deleteNext = R.omit(['next'])
   const deletePrevious = R.omit(['previous'])
-  const stringifyContents = R.over(R.lensProp('contents'), R.toString)
+  const stringifyContents = R.over(R.lensProp('contents'), x => x.toString())
 
   const cleanMetadata = R.curry((obj) => {
-    const test = R.ifElse(
-      R.hasIn('contents'),
-      R.compose(
-        deletePrevious,
-        deleteNext,
-        deleteMode,
-        deleteStat,
-        stringifyContents),
-      cleanMetadata
-    )
+    const test = (val) => {
+      return R.is(Object, val)
+      ? R.ifElse(
+        R.hasIn('contents'),
+        R.compose(
+          deletePrevious,
+          deleteNext,
+          deleteMode,
+          deleteStat,
+          stringifyContents),
+        cleanMetadata
+        )
+      : val
+    }
     return R.map(test, obj)
   })
   const state = { metadata: cleanMetadata(metadata) }
