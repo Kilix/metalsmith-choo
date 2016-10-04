@@ -1,5 +1,5 @@
-const { createState, createFile, deleteFiles } = require('./utils')
 const path = require('path')
+const { createState, createFile, deleteFiles } = require('./utils')
 
 module.exports = (opts = {}) => {
   const app = require(path.resolve(process.cwd(), opts.entry))
