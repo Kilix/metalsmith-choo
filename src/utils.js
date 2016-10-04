@@ -10,7 +10,7 @@ const createState = (metadata, f) => {
 
   const cleanMetadata = R.curry((obj) => {
     const test = (val) => {
-      return R.is(Object, val)
+      return R.or(R.is(Object, val), R.isArrayLike(val))
       ? R.ifElse(
         R.hasIn('contents'),
         R.compose(
@@ -19,8 +19,8 @@ const createState = (metadata, f) => {
           deleteMode,
           deleteStat,
           stringifyContents),
-        cleanMetadata
-        )
+          cleanMetadata
+        )(val)
       : val
     }
     return R.map(test, obj)

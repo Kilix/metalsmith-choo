@@ -2,6 +2,7 @@ node_modules
 lib
 npm-debug.log
 .DS_Store
-examples/dist
 examples/basic/node_modules
 examples/collections/node_modules
+examples/basic/dist
+examples/collections/dist
