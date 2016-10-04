@@ -1,10 +1,12 @@
 const createHTML = require('create-html')
+const R = require('ramda')
 
 const createState = (metadata, f) => {
   const state = { metadata }
   for (let key in f) {
+    const obj = R.omit(['stats', 'mode'], f[key])
     state[f[key].namespace] =
-      Object.assign({}, f[key], { contents: f[key].contents.toString() })
+      Object.assign({}, obj, { contents: f[key].contents.toString() })
   }
   return state
 }
