@@ -3,6 +3,10 @@
 [![Travis branch](https://img.shields.io/travis/Kilix/metalsmith-choo/master.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/Kilix/metalsmith-choo/master)
 [![npm](https://img.shields.io/npm/v/metalsmith-choo.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/metalsmith-choo)
 
+## Wiki
+
+  You can find a tutorial [here](https://github.com/Kilix/metalsmith-choo/wiki)
+
 ## Install
 
 ``` npm install metalsmith-choo ```
