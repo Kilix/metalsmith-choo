@@ -1,0 +1,17 @@
+{
+  "name": "collections",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "William Castandet <wcastand@gmail.com> (https://github.com/wcastand)",
+  "license": "MIT",
+  "devDependencies": {
+    "choo": "^3.3.0",
+    "metalsmith": "^2.2.0",
+    "metalsmith-collections": "^0.7.0"
+  }
+}

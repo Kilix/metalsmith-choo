@@ -3,4 +3,5 @@ lib
 npm-debug.log
 .DS_Store
 examples/dist
-examples/node_modules
+examples/basic/node_modules
+examples/collections/node_modules

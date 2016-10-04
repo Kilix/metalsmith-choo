@@ -1,4 +1,4 @@
-const wrapper = require('../../lib/chooWrap')
+const wrapper = require('../../../lib/chooWrap')
 const choo = require('choo')
 const html = require('choo/html')
 

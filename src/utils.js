@@ -2,11 +2,37 @@ const createHTML = require('create-html')
 const R = require('ramda')
 
 const createState = (metadata, f) => {
-  const state = { metadata }
+  const deleteStat = R.omit(['stats'])
+  const deleteMode = R.omit(['mode'])
+  const deleteNext = R.omit(['next'])
+  const deletePrevious = R.omit(['previous'])
+  const stringifyContents = R.over(R.lensProp('contents'), R.toString)
+
+  const cleanMetadata = R.curry((obj) => {
+    const test = R.ifElse(
+      R.hasIn('contents'),
+      R.compose(
+        deletePrevious,
+        deleteNext,
+        deleteMode,
+        deleteStat,
+        stringifyContents),
+      cleanMetadata
+    )
+    return R.map(test, obj)
+  })
+  const state = { metadata: cleanMetadata(metadata) }
+
   for (let key in f) {
-    const obj = R.omit(['stats', 'mode'], f[key])
-    state[f[key].namespace] =
-      Object.assign({}, obj, { contents: f[key].contents.toString() })
+    if (f[key].namespace) {
+      const obj = R.compose(
+        stringifyContents,
+        deleteMode,
+        deleteStat)(f[key])
+
+      state[f[key].namespace] =
+        Object.assign({}, obj)
+    }
   }
   return state
 }

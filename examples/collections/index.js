@@ -1,11 +1,11 @@
 const metalsmith = require('metalsmith')
-const markdown = require('metalsmith-markdown')
-const choo = require('../lib/')
+const collections = require('metalsmith-collections')
+const choo = require('../../lib/')
 
 metalsmith(__dirname)
 .source('src')
 .destination('dist')
-.use(markdown())
+.use(collections())
 .use(choo({
   entry: './choo/index.js'
 , routes: ['/', '/about']
